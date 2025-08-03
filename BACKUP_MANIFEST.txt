@@ -1,0 +1,81 @@
+GLITCH ENGINE PROJECT BACKUP MANIFEST
+=====================================
+
+Backup Created: $(date)
+Project Name: Glitch Engine - Async Recruiting Platform
+Version: 1.0.0
+
+INCLUDED FILES:
+==============
+
+Core Application Files:
+- src/App.tsx                 # Main application component
+- src/main.tsx               # React entry point
+- src/index.css              # Tailwind CSS imports
+- src/vite-env.d.ts          # TypeScript definitions
+
+Component Files:
+- src/components/Header.tsx           # Navigation header
+- src/components/Hero.tsx             # Landing hero section
+- src/components/Testimonial.tsx      # Customer testimonial
+- src/components/StepByStepFlow.tsx   # 5-step process flow
+- src/components/WhyAsyncWorks.tsx    # Benefits section
+- src/components/MidPageCTA.tsx       # Call-to-action
+- src/components/FAQ.tsx              # FAQ section
+- src/components/Footer.tsx           # Site footer
+- src/components/SignUpPage.tsx       # Registration page
+- src/components/LoginPage.tsx        # Login page
+- src/components/Dashboard.tsx        # Main dashboard
+
+Configuration Files:
+- package.json               # Dependencies and scripts
+- index.html                # HTML template
+- tailwind.config.js        # Tailwind configuration
+- vite.config.ts            # Vite build configuration
+- tsconfig.json             # TypeScript configuration
+- tsconfig.app.json         # App-specific TypeScript config
+- tsconfig.node.json        # Node-specific TypeScript config
+- postcss.config.js         # PostCSS configuration
+- eslint.config.js          # ESLint configuration
+
+Documentation:
+- README.md                 # Project documentation
+- BACKUP_MANIFEST.txt       # This manifest file
+
+EXCLUDED FILES:
+==============
+- node_modules/             # Dependencies (reinstall with npm install)
+- dist/                     # Build output (regenerate with npm run build)
+- .git/                     # Git history
+- package-lock.json         # Lock file (will be regenerated)
+
+RESTORATION INSTRUCTIONS:
+========================
+1. Copy all files to a new directory
+2. Run: npm install
+3. Run: npm run dev
+4. Access at: http://localhost:5173
+
+DEPENDENCIES:
+============
+- React 18.3.1
+- TypeScript 5.5.3
+- Tailwind CSS 3.4.1
+- Framer Motion 12.23.6
+- Lucide React 0.344.0
+- Vite 5.4.2
+
+FEATURES BACKED UP:
+==================
+✓ Complete React application
+✓ All component implementations
+✓ Tailwind design system
+✓ Framer Motion animations
+✓ Responsive design
+✓ Dashboard with multiple states
+✓ Authentication pages
+✓ Landing page with hero section
+✓ Step-by-step flow explanation
+✓ FAQ and testimonial sections
+
+BACKUP STATUS: COMPLETE

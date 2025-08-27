@@ -17,6 +17,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
     }
   }
 });
+console.log("🧠 Using Supabase client instance:", supabase);
 
 // Connection health check
 supabase.auth.getSession().then(({ data, error }) => {
@@ -27,5 +28,5 @@ supabase.auth.getSession().then(({ data, error }) => {
   }
 });
 
-export default supabase;
+// export default supabase;
 

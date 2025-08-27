@@ -814,29 +814,66 @@ const CandidatesContent: React.FC<{ candidates: Candidate[]; onSelectCandidate: 
 
   return (
     <div className={`${responsiveTokens.layout['grid-auto']} ${responsiveTokens.spacing['grid-gap']}`}>
-      {candidates.map((candidate) => (
-        <UnifiedCard key={candidate.id} padding="md" hover>
-          <div className="text-center">
-            <h4 className={`${responsiveTokens.typography['heading-3']} text-text-primary mb-2`}>
-              {candidate.name}
-            </h4>
-            <p className={`${responsiveTokens.typography['body']} text-text-secondary mb-2`}>
-              {candidate.role}
-            </p>
-            <p className={`${responsiveTokens.typography['body']} text-primary-violet font-semibold mb-4`}>
-              Score: {candidate.score}/100
-            </p>
-            <UnifiedButton 
-              onClick={() => onSelectCandidate(candidate)}
-              variant="primary"
-              size="sm"
-            >
-              Select Candidate
-            </UnifiedButton>
-          </div>
-        </UnifiedCard>
-      ))}
-    </div>
+  {candidates.map((candidate) => (
+    <UnifiedCard key={candidate.id} padding="md" hover>
+      <div className="text-center">
+        <h4 className={`${responsiveTokens.typography['heading-3']} text-text-primary mb-2`}>
+          {candidate.name}
+        </h4>
+        <p className={`${responsiveTokens.typography['body']} text-text-secondary mb-2`}>
+          {candidate.role}
+        </p>
+        <p className={`${responsiveTokens.typography['body']} text-primary-violet font-semibold mb-2`}>
+          Score: {candidate.score}/100
+        </p>
+
+        {candidate.video_url && (
+          <a
+            href={candidate.video_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${responsiveTokens.typography['body-sm']} text-blue-600 hover:underline mb-4 block`}
+          >
+            🎥 Watch Video Interview
+          </a>
+        )}
+
+        <UnifiedButton 
+          onClick={() => onSelectCandidate(candidate)}
+          variant="primary"
+          size="sm"
+        >
+          Select Candidate
+        </UnifiedButton>
+      </div>
+    </UnifiedCard>
+  ))}
+</div>
+
+    // <div className={`${responsiveTokens.layout['grid-auto']} ${responsiveTokens.spacing['grid-gap']}`}>
+    //   {candidates.map((candidate) => (
+    //     <UnifiedCard key={candidate.id} padding="md" hover>
+    //       <div className="text-center">
+    //         <h4 className={`${responsiveTokens.typography['heading-3']} text-text-primary mb-2`}>
+    //           {candidate.name}
+    //         </h4>
+    //         <p className={`${responsiveTokens.typography['body']} text-text-secondary mb-2`}>
+    //           {candidate.role}
+    //         </p>
+    //         <p className={`${responsiveTokens.typography['body']} text-primary-violet font-semibold mb-4`}>
+    //           Score: {candidate.score}/100
+    //         </p>
+    //         <UnifiedButton 
+    //           onClick={() => onSelectCandidate(candidate)}
+    //           variant="primary"
+    //           size="sm"
+    //         >
+    //           Select Candidate
+    //         </UnifiedButton>
+    //       </div>
+    //     </UnifiedCard>
+    //   ))}
+    // </div>
   );
 };
 

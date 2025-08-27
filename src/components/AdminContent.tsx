@@ -600,9 +600,27 @@ const JobsContent: React.FC<{ jobs: JobPosting[] }> = ({ jobs }) => {
             <h4 className={`${responsiveTokens.typography['heading-3']} text-text-primary mb-2`}>
               {job.title}
             </h4>
-            <p className={`${responsiveTokens.typography['body']} text-text-secondary mb-2`}>
-              {job.description}
-            </p>
+          <p className="text-sm text-text-secondary">Languages: {job.requirements?.join(', ')}</p>
+          <p className="text-sm text-text-secondary">Type: {job.employment_type}</p>
+          <p className="text-sm text-text-secondary">Startup Stage: {job.startup_journey}</p>
+          <p className="text-sm text-text-secondary">Skills: {job.skills_experience}</p>
+          <p className="text-sm text-text-secondary">
+            Hours/Week: {job.hours_per_week} | Start: {job.start_date} | Rate: ${job.hourly_rate}
+          </p>
+          <p className="text-sm text-text-secondary">Work Style: {job.work_style}</p>
+          <p className="text-sm text-text-secondary">Challenges: {job.biggest_challenges}</p>
+          <p className="text-sm text-text-secondary">
+            Applicant: {job.applicant_name} ({job.applicant_email}) — {job.applicant_role}
+          </p>
+          <p className="text-sm text-text-secondary">
+            Company: <a href={job.company_url} target="_blank" rel="noopener noreferrer" className="underline text-blue-600">
+              {job.company_url}
+            </a>
+          </p>
+          <p className="text-sm text-text-secondary">{job.company_description}</p>
+          <p className="text-sm text-text-secondary italic">
+            Notes: {job.notes}
+          </p>
             <div className="flex items-center gap-4 text-sm text-text-secondary">
               <span>Status: {job.status}</span>
               <span>Created: {new Date(job.created_at).toLocaleDateString()}</span>
@@ -699,6 +717,7 @@ const MeetingsContent: React.FC<{ meetings: Meeting[] }> = ({ meetings }) => {
               <span>Date: {meeting.meeting_date}</span>
               <span>Time: {meeting.meeting_time}</span>
               <span>Status: {meeting.status}</span>
+              <span>Meeting: {meeting.meeting_link}</span>
             </div>
           </div>
         </UnifiedCard>

@@ -2,6 +2,21 @@ import React from 'react';
 import { Linkedin, Twitter, Zap } from 'lucide-react';
 
 const Footer = () => {
+  const handleTermsClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.location.href = '/terms';
+  };
+
+  const handlePrivacyClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.location.href = '/privacy-policy';
+  };
+
+  const handlePricingClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.location.href = '/pricing';
+  };
+
   return (
     <footer className="bg-text-primary text-white py-12 md:py-16">
       <div className="container mx-auto px-6 md:px-8 lg:px-12 max-w-container">
@@ -29,12 +44,29 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#privacy" className="text-gray-300 hover:text-white transition-colors duration-200">
+                <a 
+                  href="/pricing" 
+                  onClick={handlePricingClick}
+                  className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer"
+                >
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/privacy-policy" 
+                  onClick={handlePrivacyClick}
+                  className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer"
+                >
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#terms" className="text-gray-300 hover:text-white transition-colors duration-200">
+                <a 
+                  href="/terms" 
+                  onClick={handleTermsClick}
+                  className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer"
+                >
                   Terms of Service
                 </a>
               </li>

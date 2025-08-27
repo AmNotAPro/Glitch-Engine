@@ -55,7 +55,7 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
         
         <div className="flex items-center gap-2">
           <img 
-            src="/logo.svg" 
+            src="/logo.png" 
             alt="Glitch Engine Logo" 
             className="w-6 h-6 object-contain"
             onError={(e) => {
@@ -111,4 +111,3 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
 };
 
 export default MobileHeader;
-

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Zap, ChevronDown } from 'lucide-react';
+import { Menu, X, Zap, ChevronDown, Shield, Award, Globe } from 'lucide-react';
 import { useResponsive } from '../providers/ResponsiveProvider';
 import { useTransition } from '../providers/AnimationProvider';
 import { responsiveTokens } from '../tokens/responsiveTokens';
@@ -42,102 +42,90 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-200/50 z-50 shadow-sm">
+      <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-xl border-b border-gray-200/30 z-50 shadow-lg">
         <div className={`${responsiveTokens.spacing['container']} mx-auto max-w-7xl`}>
-          <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Enhanced Logo */}
+          <div className="flex items-center justify-between h-18 md:h-22">
+            {/* Premium Logo */}
             <motion.div 
-              className="flex items-center gap-3"
+              className="flex items-center gap-4"
               whileHover={!isMobile ? { scale: 1.02 } : {}}
               transition={transition}
             >
               <div className="relative">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-primary-violet to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-                  <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-600 rounded-2xl flex items-center justify-center shadow-xl">
+                  <Zap className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
                 <motion.div
-                  className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full"
+                  className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full shadow-md"
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 />
               </div>
               <div>
-                <span className={`${responsiveTokens.typography['heading-2']} text-gray-900 font-bold`}>
+                <span className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
                   Glitch Engine
                 </span>
-                <div className="text-xs text-gray-500 font-medium -mt-1">
-                  Async Recruiting
+                <div className="text-xs text-gray-600 font-bold uppercase tracking-wider -mt-1">
+                  Async Recruiting Platform
                 </div>
               </div>
             </motion.div>
 
-            {/* Enhanced Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-8">
+            {/* Premium Desktop Navigation */}
+            <nav className="hidden lg:flex items-center gap-10">
               <motion.a 
                 href="#how-it-works" 
-                className={`
-                  ${responsiveTokens.typography['body']} text-gray-600 hover:text-gray-900 
-                  transition-all duration-200 font-medium relative group
-                  ${responsiveTokens.interactions['focus-ring']}
-                `}
-                whileHover={{ y: -1 }}
+                className="relative text-gray-700 hover:text-gray-900 transition-all duration-300 font-semibold text-lg group"
+                whileHover={{ y: -2 }}
                 transition={transition}
               >
                 How it Works
-                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-violet group-hover:w-full transition-all duration-300" />
+                <div className="absolute -bottom-2 left-0 w-0 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 group-hover:w-full transition-all duration-300 rounded-full" />
               </motion.a>
               <motion.a 
                 href="#faq" 
-                className={`
-                  ${responsiveTokens.typography['body']} text-gray-600 hover:text-gray-900 
-                  transition-all duration-200 font-medium relative group
-                  ${responsiveTokens.interactions['focus-ring']}
-                `}
-                whileHover={{ y: -1 }}
+                className="relative text-gray-700 hover:text-gray-900 transition-all duration-300 font-semibold text-lg group"
+                whileHover={{ y: -2 }}
                 transition={transition}
               >
                 FAQ
-                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-violet group-hover:w-full transition-all duration-300" />
+                <div className="absolute -bottom-2 left-0 w-0 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 group-hover:w-full transition-all duration-300 rounded-full" />
               </motion.a>
               <motion.a 
                 href="/pricing" 
-                className={`
-                  ${responsiveTokens.typography['body']} text-gray-600 hover:text-gray-900 
-                  transition-all duration-200 font-medium relative group
-                  ${responsiveTokens.interactions['focus-ring']}
-                `}
-                whileHover={{ y: -1 }}
+                className="relative text-gray-700 hover:text-gray-900 transition-all duration-300 font-semibold text-lg group"
+                whileHover={{ y: -2 }}
                 transition={transition}
               >
                 Pricing
-                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-violet group-hover:w-full transition-all duration-300" />
+                <div className="absolute -bottom-2 left-0 w-0 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 group-hover:w-full transition-all duration-300 rounded-full" />
               </motion.a>
             </nav>
 
-            {/* Enhanced Desktop CTA Buttons */}
-            <div className="hidden md:flex items-center gap-3">
+            {/* Premium Desktop CTA Buttons */}
+            <div className="hidden lg:flex items-center gap-4">
               <UnifiedButton
                 onClick={handleLoginClick}
                 variant="ghost"
-                size="sm"
-                className="text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                size="md"
+                className="text-gray-700 hover:text-gray-900 hover:bg-gray-100 font-semibold border-2 border-transparent hover:border-gray-200"
               >
                 Sign In
               </UnifiedButton>
               <UnifiedButton
                 onClick={handleSignUpClick}
                 variant="primary"
-                size="sm"
-                className="bg-gradient-to-r from-primary-violet to-purple-600 hover:from-primary-violet-dark hover:to-purple-700 shadow-lg hover:shadow-xl"
+                size="md"
+                className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 hover:from-indigo-700 hover:via-purple-700 hover:to-blue-700 shadow-xl hover:shadow-2xl font-bold text-lg px-6 py-3"
               >
-                Get Started Free
+                Start Free Trial
               </UnifiedButton>
             </div>
 
-            {/* Enhanced Mobile Menu Button */}
+            {/* Premium Mobile Menu Button */}
             <motion.button
               onClick={toggleMenu}
-              className="md:hidden p-2 text-gray-600 hover:text-gray-900 transition-colors duration-200 rounded-xl hover:bg-gray-100"
+              className="lg:hidden p-3 text-gray-700 hover:text-gray-900 transition-colors duration-200 rounded-2xl hover:bg-gray-100 shadow-md"
               whileTap={{ scale: 0.95 }}
               transition={transition}
             >
@@ -150,7 +138,7 @@ const Header = () => {
                     exit={{ rotate: 90, opacity: 0 }}
                     transition={transition}
                   >
-                    <X className="w-6 h-6" />
+                    <X className="w-7 h-7" />
                   </motion.div>
                 ) : (
                   <motion.div
@@ -160,83 +148,68 @@ const Header = () => {
                     exit={{ rotate: -90, opacity: 0 }}
                     transition={transition}
                   >
-                    <Menu className="w-6 h-6" />
+                    <Menu className="w-7 h-7" />
                   </motion.div>
                 )}
               </AnimatePresence>
             </motion.button>
           </div>
 
-          {/* Enhanced Mobile Menu */}
+          {/* Premium Mobile Menu */}
           <AnimatePresence>
             {isMenuOpen && (
               <motion.div
-                className="md:hidden py-6 border-t border-gray-200/50 bg-white/95 backdrop-blur-md"
+                className="lg:hidden py-8 border-t border-gray-200/50 bg-white/95 backdrop-blur-xl"
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: 'auto', opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
                 transition={transition}
               >
-                <nav className="flex flex-col gap-6">
+                <nav className="flex flex-col gap-8">
                   <motion.a 
                     href="#how-it-works" 
-                    className={`
-                      ${responsiveTokens.typography['body']} text-gray-600 hover:text-gray-900 
-                      transition-colors duration-200 font-medium py-2 px-2 rounded-lg hover:bg-gray-50
-                      ${responsiveTokens.interactions['touch-target']}
-                      ${responsiveTokens.interactions['focus-ring']}
-                    `}
+                    className="text-gray-700 hover:text-gray-900 transition-colors duration-200 font-semibold text-xl py-3 px-4 rounded-xl hover:bg-gray-50"
                     onClick={() => setIsMenuOpen(false)}
-                    whileTap={{ scale: 0.98, x: 4 }}
+                    whileTap={{ scale: 0.98, x: 6 }}
                     transition={transition}
                   >
                     How it Works
                   </motion.a>
                   <motion.a 
                     href="#faq" 
-                    className={`
-                      ${responsiveTokens.typography['body']} text-gray-600 hover:text-gray-900 
-                      transition-colors duration-200 font-medium py-2 px-2 rounded-lg hover:bg-gray-50
-                      ${responsiveTokens.interactions['touch-target']}
-                      ${responsiveTokens.interactions['focus-ring']}
-                    `}
+                    className="text-gray-700 hover:text-gray-900 transition-colors duration-200 font-semibold text-xl py-3 px-4 rounded-xl hover:bg-gray-50"
                     onClick={() => setIsMenuOpen(false)}
-                    whileTap={{ scale: 0.98, x: 4 }}
+                    whileTap={{ scale: 0.98, x: 6 }}
                     transition={transition}
                   >
                     FAQ
                   </motion.a>
                   <motion.a 
                     href="/pricing" 
-                    className={`
-                      ${responsiveTokens.typography['body']} text-gray-600 hover:text-gray-900 
-                      transition-colors duration-200 font-medium py-2 px-2 rounded-lg hover:bg-gray-50
-                      ${responsiveTokens.interactions['touch-target']}
-                      ${responsiveTokens.interactions['focus-ring']}
-                    `}
+                    className="text-gray-700 hover:text-gray-900 transition-colors duration-200 font-semibold text-xl py-3 px-4 rounded-xl hover:bg-gray-50"
                     onClick={() => setIsMenuOpen(false)}
-                    whileTap={{ scale: 0.98, x: 4 }}
+                    whileTap={{ scale: 0.98, x: 6 }}
                     transition={transition}
                   >
                     Pricing
                   </motion.a>
                   
-                  <div className="flex flex-col gap-3 pt-4 border-t border-gray-200">
+                  <div className="flex flex-col gap-4 pt-6 border-t border-gray-200">
                     <UnifiedButton
                       onClick={handleLoginClick}
                       variant="ghost"
-                      size="md"
-                      className="justify-start text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                      size="lg"
+                      className="justify-start text-gray-700 hover:text-gray-900 hover:bg-gray-100 font-semibold border-2 border-gray-200"
                     >
                       Sign In
                     </UnifiedButton>
                     <UnifiedButton
                       onClick={handleSignUpClick}
                       variant="primary"
-                      size="md"
-                      className="justify-start bg-gradient-to-r from-primary-violet to-purple-600 shadow-lg"
+                      size="lg"
+                      className="justify-start bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 shadow-xl font-bold text-lg"
                     >
-                      Get Started Free
+                      Start Free Trial
                     </UnifiedButton>
                   </div>
                 </nav>
